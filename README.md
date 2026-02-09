@@ -308,22 +308,6 @@ PoseGeoNet employs a dual-branch architecture with:
 - Mixed precision: FP16
 - Augmentation: RandomHorizontalFlip(p=0.5), ColorJitter
 
----
-
-## 📄 Citation
-
-If you use PoseGeoNet in your research, please cite:
-
-```bibtex
-@article{posegeonet2026,
-  title={PoseGeoNet: Dual-Branch Geometry-Guided Attention Fusion for Head Pose Estimation},
-  author={Your Name},
-  journal={arXiv preprint},
-  year={2026}
-}
-```
-
----
 
 ## 🤝 Contributing
 
