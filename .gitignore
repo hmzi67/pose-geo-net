@@ -1,0 +1,74 @@
+# Python cache and bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+venv/
+.env/
+ENV/
+
+# Model checkpoints and outputs
+models/saved/
+models/ablation/
+*.pth
+*.pt
+*.h5
+*.ckpt
+
+# Results and reports
+results/
+results/csv_reports/
+results/cnn_visualizations/
+results/cross_dataset_eval/
+*.csv
+*.npz
+*.xlsx
+
+# Logs
+logs/
+*.log
+
+# Data (raw, processed, splits)
+data/raw/
+data/processed/
+data/splits/
+*.mat
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Misc
+*.bak
+*.tmp
+*.swp
+
+# Ignore docs build artifacts
+/docs/new/
+
+# Ignore generated diagrams
+*.png
+*.jpg
+*.jpeg
+*.svg
+
+# Ignore technical contribution drafts
+TECHNICAL_CONTRIBUTIONS.md
+
+# Ignore ablation status reports
+ablation_status_report.txt
+ABLATION_STATUS_SUMMARY.md
+
+
+
+.cache/
+data/
+
+sdfasd
+

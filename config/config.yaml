@@ -1,0 +1,68 @@
+# Head Pose Estimation Configuration
+
+# Dataset paths
+data:
+  raw_data_path: "data/raw/faces_0"
+  processed_path: "data/processed"
+  splits_path: "data/splits"
+  max_frames_per_subject: null  # null = process all, or set int for testing
+
+# Feature extraction
+features:
+  normalize: true
+  face_mesh_landmarks: 468
+  pose_landmarks: 33
+  total_features: 1503  # (468 + 33) * 3
+
+# Model architecture
+model:
+  # Architecture type: 'single_branch' (original) or 'dual_branch' (new landmark-aware)
+  architecture: "dual_branch"  # Change to "single_branch" for original model
+  
+  # Original single-branch MLP parameters (for backward compatibility)
+  input_dim: 1503
+  output_dim: 3  # yaw, pitch, roll
+  hidden_layers: [768, 256, 128]
+  dropout_rates: [0.15, 0.10, 0.0]
+  activation: "relu"
+  
+  # Dual-branch architecture parameters (used when architecture="dual_branch")
+  face_input_dim: 1404  # [512, 1024, 768, 2048, 1404]
+  pose_input_dim: 99    # [128, 256, 768, 64, 99]
+  face_hidden: [512, 256]  # Face encoder hidden layers
+  pose_hidden: [128, 64]   # Pose encoder hidden layers
+  fusion_dim: 256          # Feature fusion dimension
+  regression_hidden: 128   # Regression head hidden dimension
+  dropout_rates_dual:
+    face: 0.1        # Dropout for face encoder
+    pose: 0.1        # Dropout for pose encoder
+    fusion: 0.1      # Dropout for fusion layer
+    regression: 0.05 # Dropout for regression head
+
+# Training parameters
+training:
+  batch_size: 64
+  epochs: 200
+  learning_rate: 0.0001
+  weight_decay: 0.00001
+  optimizer: "adamw"
+  criterion: "mse"
+  early_stopping_patience: 20
+  log_interval: 20
+  seed: 42
+
+# Data split
+split:
+  train_ratio: 0.75
+  val_ratio: 0.05
+  test_ratio: 0.2
+  random_state: 42
+
+# Device
+device: "cuda"  # or "cpu"
+
+# Paths
+paths:
+  model_save_dir: "models/saved"
+  results_dir: "results"
+  logs_dir: "logs"
