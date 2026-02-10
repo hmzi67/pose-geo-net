@@ -1258,3 +1258,696 @@ Models saved to:  models/ablation/dimension_attention/
 BACKBONE ABLATION
 
 ==================
+
+y%                                                                                                     
+➜  Archive git:(main) ✗ y
+➜  Archive git:(main) ✗ source /home/genesys/hamza/cervical/Archive/venv/bin/activate
+(venv) ➜  Archive git:(main) ✗ ./run_backbone_ablation.sh 
+======================================================================
+🚀 BACKBONE ABLATION (ATTENTION FUSION 1404:99) - Starting all experiments
+======================================================================
+
+======================================================================
+[1/5] Training with ResNet34
+======================================================================
+======================================================================
+🔗 FUSION STRATEGY ABLATION: ATTENTION
+======================================================================
+
+📋 Configuration:
+   Fusion Type: attention
+   Backbone:    resnet34
+   Face Dim:    1404
+   Pose Dim:    99
+   Epochs:      150
+   Batch size:  64
+   Output dir:  models/ablation/backbone
+   Device:      cuda
+
+🔍 Checking data preprocessing...
+✅ Data preprocessing already complete - skipping
+   Using splits from: data/splits
+
+📂 Loading data splits...
+   Train samples: 11758
+   Val samples:   784
+   Y mean: [  8.20929   -10.902234   -1.4025756]
+   Y std:  [30.444633 24.493015 11.616344]
+
+🏗️  Creating model...
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet34_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet34_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+   Fusion Type:  attention
+   Backbone:     resnet34
+   Parameters:   24,357,474
+   Model size:   92.92 MB
+
+⚙️  Setting up training...
+
+🚀 Starting training...
+======================================================================
+Epoch   1/150 | Train MAE: 8.8489° | Val MAE: 4.5242° (Yaw=6.3520°, Pitch=3.7205°, Roll=3.5002°)       
+Epoch   5/150 | Train MAE: 3.5682° | Val MAE: 2.7281° (Yaw=3.1771°, Pitch=2.8675°, Roll=2.1398°)       
+Epoch  10/150 | Train MAE: 2.9880° | Val MAE: 2.0897° (Yaw=2.7736°, Pitch=1.9685°, Roll=1.5271°)       
+   ✓ New best model saved (Val MAE: 2.0897°)
+Epoch  15/150 | Train MAE: 2.7451° | Val MAE: 2.1057° (Yaw=2.3628°, Pitch=2.0994°, Roll=1.8550°)       
+Epoch  20/150 | Train MAE: 2.5201° | Val MAE: 1.5086° (Yaw=1.8077°, Pitch=1.5110°, Roll=1.2071°)       
+   ✓ New best model saved (Val MAE: 1.5086°)
+Epoch  25/150 | Train MAE: 2.4269° | Val MAE: 1.7681° (Yaw=2.2674°, Pitch=1.6743°, Roll=1.3625°)       
+Epoch  30/150 | Train MAE: 2.5182° | Val MAE: 1.9887° (Yaw=2.6538°, Pitch=1.9724°, Roll=1.3399°)       
+Epoch  35/150 | Train MAE: 2.2610° | Val MAE: 1.7110° (Yaw=2.3868°, Pitch=1.3920°, Roll=1.3542°)       
+Epoch  40/150 | Train MAE: 2.2812° | Val MAE: 1.7311° (Yaw=2.1968°, Pitch=1.5392°, Roll=1.4574°)       
+Epoch  45/150 | Train MAE: 2.1279° | Val MAE: 1.4110° (Yaw=1.6636°, Pitch=1.4454°, Roll=1.1240°)       
+Epoch  50/150 | Train MAE: 2.1253° | Val MAE: 1.4560° (Yaw=1.7615°, Pitch=1.4745°, Roll=1.1321°)       
+Epoch  55/150 | Train MAE: 2.3280° | Val MAE: 1.5711° (Yaw=2.0115°, Pitch=1.4780°, Roll=1.2239°)       
+Epoch  60/150 | Train MAE: 2.0255° | Val MAE: 1.3638° (Yaw=1.4574°, Pitch=1.5712°, Roll=1.0627°)       
+   ✓ New best model saved (Val MAE: 1.3638°)
+Epoch  65/150 | Train MAE: 2.0254° | Val MAE: 1.3984° (Yaw=1.8859°, Pitch=1.1083°, Roll=1.2010°)       
+Epoch  70/150 | Train MAE: 1.9777° | Val MAE: 1.4182° (Yaw=1.7909°, Pitch=1.2628°, Roll=1.2009°)       
+Epoch  75/150 | Train MAE: 1.9562° | Val MAE: 1.2170° (Yaw=1.4124°, Pitch=1.1796°, Roll=1.0591°)       
+Epoch  80/150 | Train MAE: 1.9425° | Val MAE: 1.5233° (Yaw=1.9853°, Pitch=1.5321°, Roll=1.0525°)       
+Epoch  85/150 | Train MAE: 1.8775° | Val MAE: 1.2752° (Yaw=1.5922°, Pitch=1.1318°, Roll=1.1017°)       
+Epoch  90/150 | Train MAE: 1.9013° | Val MAE: 1.3122° (Yaw=1.6426°, Pitch=1.1791°, Roll=1.1150°)       
+Epoch  95/150 | Train MAE: 1.8620° | Val MAE: 1.3467° (Yaw=1.5783°, Pitch=1.3304°, Roll=1.1313°)       
+Epoch 100/150 | Train MAE: 1.8232° | Val MAE: 1.2550° (Yaw=1.5402°, Pitch=1.2587°, Roll=0.9659°)       
+Epoch 105/150 | Train MAE: 1.8393° | Val MAE: 1.2148° (Yaw=1.5761°, Pitch=1.0792°, Roll=0.9890°)       
+Epoch 110/150 | Train MAE: 1.8065° | Val MAE: 1.2869° (Yaw=1.5760°, Pitch=1.1873°, Roll=1.0974°)       
+Epoch 115/150 | Train MAE: 1.7890° | Val MAE: 1.2595° (Yaw=1.5773°, Pitch=1.1876°, Roll=1.0136°)       
+Epoch 120/150 | Train MAE: 1.7747° | Val MAE: 1.2072° (Yaw=1.4471°, Pitch=1.1412°, Roll=1.0334°)       
+Epoch 125/150 | Train MAE: 1.7496° | Val MAE: 1.1644° (Yaw=1.3415°, Pitch=1.1495°, Roll=1.0022°)       
+Epoch 130/150 | Train MAE: 1.7549° | Val MAE: 1.2516° (Yaw=1.4436°, Pitch=1.1996°, Roll=1.1115°)       
+Epoch 135/150 | Train MAE: 1.7196° | Val MAE: 1.2361° (Yaw=1.7176°, Pitch=1.0727°, Roll=0.9181°)       
+Epoch 140/150 | Train MAE: 1.7030° | Val MAE: 1.1434° (Yaw=1.3380°, Pitch=1.1305°, Roll=0.9618°)       
+Epoch 145/150 | Train MAE: 1.6914° | Val MAE: 1.1913° (Yaw=1.3799°, Pitch=1.2142°, Roll=0.9798°)       
+Epoch 150/150 | Train MAE: 1.6785° | Val MAE: 1.2354° (Yaw=1.4536°, Pitch=1.2301°, Roll=1.0225°)       
+
+======================================================================
+✅ TRAINING COMPLETE!
+======================================================================
+
+📊 Results:
+   Best Val MAE:     1.0908°
+   Yaw MAE:          1.2551°
+   Pitch MAE:        1.0552°
+   Roll MAE:         0.9622°
+   Final Epoch:      150
+   Model saved to:   models/ablation/backbone/attention_resnet34_best.pth
+   History saved to: models/ablation/backbone/attention_resnet34_history.csv
+   Parameters:       24,357,474
+
+✅ Fusion variant 'attention' training complete!
+   Best validation MAE: 1.0908°
+
+======================================================================
+📊 EVALUATING ATTENTION FUSION ON TEST SET
+======================================================================
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+   Test samples: 3136
+Testing: 100%|█████████████████████████████████████████████████████████| 49/49 [00:59<00:00,  1.22s/it]
+
+📈 Test Results:
+   Yaw MAE:   1.1892°
+   Pitch MAE: 1.0200°
+   Roll MAE:  0.9584°
+   Mean MAE:  1.0559°
+
+   Results saved to: results/csv_reports/backbone_resnet34_test_results.csv
+
+✅ Test evaluation complete!
+   Test MAE: 1.0559°
+
+======================================================================
+[2/5] Training with ResNet18
+======================================================================
+======================================================================
+🔗 FUSION STRATEGY ABLATION: ATTENTION
+======================================================================
+
+📋 Configuration:
+   Fusion Type: attention
+   Backbone:    resnet18
+   Face Dim:    1404
+   Pose Dim:    99
+   Epochs:      150
+   Batch size:  64
+   Output dir:  models/ablation/backbone
+   Device:      cuda
+
+🔍 Checking data preprocessing...
+✅ Data preprocessing already complete - skipping
+   Using splits from: data/splits
+
+📂 Loading data splits...
+   Train samples: 11758
+   Val samples:   784
+   Y mean: [  8.20929   -10.902234   -1.4025756]
+   Y std:  [30.444633 24.493015 11.616344]
+
+🏗️  Creating model...
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet18_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet18_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+   Fusion Type:  attention
+   Backbone:     resnet18
+   Parameters:   14,249,314
+   Model size:   54.36 MB
+
+⚙️  Setting up training...
+
+🚀 Starting training...
+======================================================================
+Epoch   1/150 | Train MAE: 8.9943° | Val MAE: 4.0956° (Yaw=5.4079°, Pitch=3.5835°, Roll=3.2955°)       
+Epoch   5/150 | Train MAE: 3.5729° | Val MAE: 3.1360° (Yaw=3.8972°, Pitch=3.0138°, Roll=2.4970°)       
+Epoch  10/150 | Train MAE: 3.0055° | Val MAE: 2.0225° (Yaw=2.3363°, Pitch=2.1387°, Roll=1.5926°)       
+Epoch  15/150 | Train MAE: 2.7150° | Val MAE: 1.9648° (Yaw=2.4710°, Pitch=1.8243°, Roll=1.5990°)       
+Epoch  20/150 | Train MAE: 2.5930° | Val MAE: 1.6974° (Yaw=1.9603°, Pitch=1.7680°, Roll=1.3640°)       
+   ✓ New best model saved (Val MAE: 1.6974°)
+Epoch  25/150 | Train MAE: 2.4680° | Val MAE: 1.8027° (Yaw=2.1709°, Pitch=1.8060°, Roll=1.4312°)       
+Epoch  30/150 | Train MAE: 2.3634° | Val MAE: 1.6565° (Yaw=1.9968°, Pitch=1.7190°, Roll=1.2538°)       
+Epoch  35/150 | Train MAE: 2.3007° | Val MAE: 1.5886° (Yaw=2.0473°, Pitch=1.4893°, Roll=1.2293°)       
+Epoch  40/150 | Train MAE: 2.8971° | Val MAE: 1.8225° (Yaw=2.1903°, Pitch=1.8435°, Roll=1.4336°)       
+Epoch  45/150 | Train MAE: 2.1744° | Val MAE: 1.3910° (Yaw=1.6179°, Pitch=1.2597°, Roll=1.2955°)       
+Epoch  50/150 | Train MAE: 2.1194° | Val MAE: 1.2997° (Yaw=1.5380°, Pitch=1.2803°, Roll=1.0807°)       
+   ✓ New best model saved (Val MAE: 1.2997°)
+Epoch  55/150 | Train MAE: 2.0767° | Val MAE: 1.3395° (Yaw=1.5573°, Pitch=1.2641°, Roll=1.1970°)       
+Epoch  60/150 | Train MAE: 2.0483° | Val MAE: 1.3045° (Yaw=1.6064°, Pitch=1.2473°, Roll=1.0599°)       
+Epoch  65/150 | Train MAE: 2.1526° | Val MAE: 2.6348° (Yaw=3.0617°, Pitch=2.5763°, Roll=2.2665°)       
+Epoch  70/150 | Train MAE: 1.9897° | Val MAE: 1.2531° (Yaw=1.5251°, Pitch=1.1660°, Roll=1.0680°)       
+   ✓ New best model saved (Val MAE: 1.2531°)
+Epoch  75/150 | Train MAE: 1.9291° | Val MAE: 1.2680° (Yaw=1.6422°, Pitch=1.1786°, Roll=0.9832°)       
+Epoch  80/150 | Train MAE: 1.9135° | Val MAE: 1.3731° (Yaw=1.7503°, Pitch=1.3086°, Roll=1.0602°)       
+Epoch  85/150 | Train MAE: 1.9019° | Val MAE: 1.2534° (Yaw=1.5062°, Pitch=1.2725°, Roll=0.9815°)       
+Epoch  90/150 | Train MAE: 1.8857° | Val MAE: 1.2219° (Yaw=1.4995°, Pitch=1.1481°, Roll=1.0182°)       
+Epoch  95/150 | Train MAE: 1.8486° | Val MAE: 1.4549° (Yaw=1.8320°, Pitch=1.3518°, Roll=1.1811°)       
+Epoch 100/150 | Train MAE: 1.8355° | Val MAE: 1.1957° (Yaw=1.4948°, Pitch=1.1331°, Roll=0.9593°)       
+Epoch 105/150 | Train MAE: 1.8314° | Val MAE: 1.2505° (Yaw=1.3996°, Pitch=1.2871°, Roll=1.0649°)       
+                                                                                                       
+Early stopping triggered after 107 epochs (no improvement for 20 epochs)
+
+======================================================================
+✅ TRAINING COMPLETE!
+======================================================================
+
+📊 Results:
+   Best Val MAE:     1.1701°
+   Yaw MAE:          1.4141°
+   Pitch MAE:        1.0762°
+   Roll MAE:         1.0199°
+   Final Epoch:      107
+   Model saved to:   models/ablation/backbone/attention_resnet18_best.pth
+   History saved to: models/ablation/backbone/attention_resnet18_history.csv
+   Parameters:       14,249,314
+
+✅ Fusion variant 'attention' training complete!
+   Best validation MAE: 1.1701°
+
+======================================================================
+📊 EVALUATING ATTENTION FUSION ON TEST SET
+======================================================================
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+   Test samples: 3136
+Testing: 100%|█████████████████████████████████████████████████████████| 49/49 [00:11<00:00,  4.36it/s]
+
+📈 Test Results:
+   Yaw MAE:   1.4204°
+   Pitch MAE: 1.0569°
+   Roll MAE:  1.0414°
+   Mean MAE:  1.1729°
+
+   Results saved to: results/csv_reports/backbone_resnet18_test_results.csv
+
+✅ Test evaluation complete!
+   Test MAE: 1.1729°
+
+======================================================================
+[3/5] Training with ResNet50
+======================================================================
+======================================================================
+🔗 FUSION STRATEGY ABLATION: ATTENTION
+======================================================================
+
+📋 Configuration:
+   Fusion Type: attention
+   Backbone:    resnet50
+   Face Dim:    1404
+   Pose Dim:    99
+   Epochs:      150
+   Batch size:  64
+   Output dir:  models/ablation/backbone
+   Device:      cuda
+
+🔍 Checking data preprocessing...
+✅ Data preprocessing already complete - skipping
+   Using splits from: data/splits
+
+📂 Loading data splits...
+   Train samples: 11758
+   Val samples:   784
+   Y mean: [  8.20929   -10.902234   -1.4025756]
+   Y std:  [30.444633 24.493015 11.616344]
+
+🏗️  Creating model...
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=ResNet50_Weights.IMAGENET1K_V1`. You can also use `weights=ResNet50_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+   Fusion Type:  attention
+   Backbone:     resnet50
+   Parameters:   28,153,698
+   Model size:   107.40 MB
+
+⚙️  Setting up training...
+
+🚀 Starting training...
+======================================================================
+Epoch   1/150 | Train MAE: 8.3296° | Val MAE: 4.0158° (Yaw=4.8694°, Pitch=4.2349°, Roll=2.9432°)       
+Epoch   5/150 | Train MAE: 3.3901° | Val MAE: 2.4270° (Yaw=3.3545°, Pitch=2.1256°, Roll=1.8010°)       
+Epoch  10/150 | Train MAE: 2.8838° | Val MAE: 2.0965° (Yaw=2.4687°, Pitch=2.1451°, Roll=1.6756°)       
+   ✓ New best model saved (Val MAE: 2.0965°)
+Epoch  15/150 | Train MAE: 2.6599° | Val MAE: 1.8396° (Yaw=2.6455°, Pitch=1.5225°, Roll=1.3506°)       
+Epoch  20/150 | Train MAE: 2.5442° | Val MAE: 1.9025° (Yaw=2.6026°, Pitch=1.8460°, Roll=1.2587°)       
+Epoch  25/150 | Train MAE: 2.4182° | Val MAE: 1.8126° (Yaw=2.0336°, Pitch=1.9424°, Roll=1.4616°)       
+Epoch  30/150 | Train MAE: 2.3571° | Val MAE: 1.5474° (Yaw=1.9091°, Pitch=1.3620°, Roll=1.3711°)       
+   ✓ New best model saved (Val MAE: 1.5474°)
+Epoch  35/150 | Train MAE: 2.2014° | Val MAE: 1.4765° (Yaw=1.9237°, Pitch=1.4124°, Roll=1.0934°)       
+Epoch  40/150 | Train MAE: 2.2176° | Val MAE: 1.7554° (Yaw=2.2169°, Pitch=1.7113°, Roll=1.3380°)       
+Epoch  45/150 | Train MAE: 2.1582° | Val MAE: 1.4865° (Yaw=1.6466°, Pitch=1.5696°, Roll=1.2435°)       
+Epoch  50/150 | Train MAE: 2.0865° | Val MAE: 1.8135° (Yaw=1.9777°, Pitch=2.0261°, Roll=1.4368°)       
+Epoch  55/150 | Train MAE: 2.0652° | Val MAE: 1.3055° (Yaw=1.4473°, Pitch=1.3998°, Roll=1.0694°)       
+Epoch  60/150 | Train MAE: 2.0331° | Val MAE: 1.3417° (Yaw=1.5564°, Pitch=1.3114°, Roll=1.1573°)       
+Epoch  65/150 | Train MAE: 1.9946° | Val MAE: 1.3119° (Yaw=1.5890°, Pitch=1.3444°, Roll=1.0022°)       
+Epoch  70/150 | Train MAE: 1.9861° | Val MAE: 1.3940° (Yaw=1.6421°, Pitch=1.3139°, Roll=1.2260°)       
+Epoch  75/150 | Train MAE: 1.9571° | Val MAE: 1.3000° (Yaw=1.5036°, Pitch=1.3271°, Roll=1.0693°)       
+Epoch  80/150 | Train MAE: 2.4694° | Val MAE: 1.4433° (Yaw=1.8029°, Pitch=1.4377°, Roll=1.0893°)       
+Epoch  85/150 | Train MAE: 1.8566° | Val MAE: 1.1017° (Yaw=1.1982°, Pitch=1.1101°, Roll=0.9969°)       
+Epoch  90/150 | Train MAE: 1.8082° | Val MAE: 1.2911° (Yaw=1.4188°, Pitch=1.4315°, Roll=1.0230°)       
+Epoch  95/150 | Train MAE: 1.8203° | Val MAE: 1.3327° (Yaw=1.5184°, Pitch=1.3019°, Roll=1.1779°)       
+Epoch 100/150 | Train MAE: 1.8038° | Val MAE: 1.2455° (Yaw=1.4033°, Pitch=1.2677°, Roll=1.0654°)       
+Epoch 105/150 | Train MAE: 1.8003° | Val MAE: 1.2357° (Yaw=1.6018°, Pitch=1.1455°, Roll=0.9599°)       
+
+Early stopping triggered after 105 epochs (no improvement for 20 epochs)
+
+======================================================================
+✅ TRAINING COMPLETE!
+======================================================================
+
+📊 Results:
+   Best Val MAE:     1.1017°
+   Yaw MAE:          1.1982°
+   Pitch MAE:        1.1101°
+   Roll MAE:         0.9969°
+   Final Epoch:      105
+   Model saved to:   models/ablation/backbone/attention_resnet50_best.pth
+   History saved to: models/ablation/backbone/attention_resnet50_history.csv
+   Parameters:       28,153,698
+
+✅ Fusion variant 'attention' training complete!
+   Best validation MAE: 1.1017°
+
+======================================================================
+📊 EVALUATING ATTENTION FUSION ON TEST SET
+======================================================================
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+   Test samples: 3136
+Testing: 100%|█████████████████████████████████████████████████████████| 49/49 [00:11<00:00,  4.29it/s]
+
+📈 Test Results:
+   Yaw MAE:   1.1374°
+   Pitch MAE: 1.0874°
+   Roll MAE:  1.0124°
+   Mean MAE:  1.0791°
+
+   Results saved to: results/csv_reports/backbone_resnet50_test_results.csv
+
+✅ Test evaluation complete!
+   Test MAE: 1.0791°
+
+======================================================================
+[4/5] Training with MobileNetV3-Large
+======================================================================
+======================================================================
+🔗 FUSION STRATEGY ABLATION: ATTENTION
+======================================================================
+
+📋 Configuration:
+   Fusion Type: attention
+   Backbone:    mobilenet_v3_large
+   Face Dim:    1404
+   Pose Dim:    99
+   Epochs:      150
+   Batch size:  64
+   Output dir:  models/ablation/backbone
+   Device:      cuda
+
+🔍 Checking data preprocessing...
+✅ Data preprocessing already complete - skipping
+   Using splits from: data/splits
+
+📂 Loading data splits...
+   Train samples: 11758
+   Val samples:   784
+   Y mean: [  8.20929   -10.902234   -1.4025756]
+   Y std:  [30.444633 24.493015 11.616344]
+
+🏗️  Creating model...
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=MobileNet_V3_Large_Weights.IMAGENET1K_V1`. You can also use `weights=MobileNet_V3_Large_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+   Fusion Type:  attention
+   Backbone:     mobilenet_v3_large
+   Parameters:   6,503,506
+   Model size:   24.81 MB
+
+⚙️  Setting up training...
+
+🚀 Starting training...
+======================================================================
+Epoch   1/150 | Train MAE: 10.2730° | Val MAE: 5.6986° (Yaw=8.0117°, Pitch=5.2397°, Roll=3.8444°)      
+Epoch   5/150 | Train MAE: 3.7532° | Val MAE: 2.6772° (Yaw=3.5970°, Pitch=2.5309°, Roll=1.9038°)       
+Epoch  10/150 | Train MAE: 3.1382° | Val MAE: 2.1453° (Yaw=2.7622°, Pitch=1.9713°, Roll=1.7024°)       
+   ✓ New best model saved (Val MAE: 2.1453°)
+Epoch  15/150 | Train MAE: 2.8756° | Val MAE: 2.0132° (Yaw=2.7768°, Pitch=1.6321°, Roll=1.6309°)       
+Epoch  20/150 | Train MAE: 2.6350° | Val MAE: 1.8535° (Yaw=2.3060°, Pitch=1.8885°, Roll=1.3659°)       
+Epoch  25/150 | Train MAE: 2.5400° | Val MAE: 1.6612° (Yaw=1.9890°, Pitch=1.7377°, Roll=1.2570°)       
+Epoch  30/150 | Train MAE: 2.4369° | Val MAE: 1.6914° (Yaw=1.9438°, Pitch=1.8033°, Roll=1.3270°)       
+Epoch  35/150 | Train MAE: 2.3384° | Val MAE: 1.7168° (Yaw=2.3098°, Pitch=1.5460°, Roll=1.2946°)       
+Epoch  40/150 | Train MAE: 2.2508° | Val MAE: 1.4488° (Yaw=1.6285°, Pitch=1.4620°, Roll=1.2557°)       
+Epoch  45/150 | Train MAE: 2.1868° | Val MAE: 1.4260° (Yaw=1.8576°, Pitch=1.3072°, Roll=1.1134°)       
+Epoch  50/150 | Train MAE: 2.1674° | Val MAE: 1.4938° (Yaw=1.7597°, Pitch=1.5857°, Roll=1.1362°)       
+Epoch  55/150 | Train MAE: 2.0485° | Val MAE: 1.3755° (Yaw=1.6389°, Pitch=1.3077°, Roll=1.1800°)       
+Epoch  60/150 | Train MAE: 2.0439° | Val MAE: 1.3870° (Yaw=1.6645°, Pitch=1.4279°, Roll=1.0685°)       
+Epoch  65/150 | Train MAE: 2.0132° | Val MAE: 1.3456° (Yaw=1.5618°, Pitch=1.4485°, Roll=1.0266°)       
+Epoch  70/150 | Train MAE: 1.9614° | Val MAE: 1.3210° (Yaw=1.6688°, Pitch=1.2494°, Roll=1.0447°)       
+Epoch  75/150 | Train MAE: 1.9316° | Val MAE: 1.2893° (Yaw=1.4427°, Pitch=1.3312°, Roll=1.0941°)       
+Epoch  80/150 | Train MAE: 1.9039° | Val MAE: 1.2703° (Yaw=1.5743°, Pitch=1.1856°, Roll=1.0510°)       
+Epoch  85/150 | Train MAE: 1.8853° | Val MAE: 1.2877° (Yaw=1.6756°, Pitch=1.1719°, Roll=1.0157°)       
+Epoch  90/150 | Train MAE: 1.8647° | Val MAE: 1.2266° (Yaw=1.4682°, Pitch=1.2303°, Roll=0.9814°)       
+Epoch  95/150 | Train MAE: 1.8511° | Val MAE: 1.3040° (Yaw=1.5812°, Pitch=1.3079°, Roll=1.0230°)       
+Epoch 100/150 | Train MAE: 1.8164° | Val MAE: 1.2596° (Yaw=1.5435°, Pitch=1.2405°, Roll=0.9948°)       
+Epoch 105/150 | Train MAE: 1.8011° | Val MAE: 1.2755° (Yaw=1.6468°, Pitch=1.1612°, Roll=1.0185°)       
+Epoch 110/150 | Train MAE: 1.7835° | Val MAE: 1.2110° (Yaw=1.4087°, Pitch=1.2609°, Roll=0.9633°)       
+Epoch 115/150 | Train MAE: 1.7645° | Val MAE: 1.2541° (Yaw=1.4770°, Pitch=1.2926°, Roll=0.9927°)       
+Epoch 120/150 | Train MAE: 1.7411° | Val MAE: 1.1088° (Yaw=1.2356°, Pitch=1.1923°, Roll=0.8986°)       
+   ✓ New best model saved (Val MAE: 1.1088°)
+Epoch 125/150 | Train MAE: 1.7379° | Val MAE: 1.1434° (Yaw=1.2402°, Pitch=1.2692°, Roll=0.9208°)       
+Epoch 130/150 | Train MAE: 1.7168° | Val MAE: 1.1864° (Yaw=1.3990°, Pitch=1.1974°, Roll=0.9628°)       
+Epoch 135/150 | Train MAE: 1.7129° | Val MAE: 1.1304° (Yaw=1.2828°, Pitch=1.1709°, Roll=0.9375°)       
+Epoch 140/150 | Train MAE: 1.7275° | Val MAE: 1.1359° (Yaw=1.3239°, Pitch=1.1001°, Roll=0.9837°)       
+Epoch 145/150 | Train MAE: 1.6906° | Val MAE: 1.1623° (Yaw=1.3393°, Pitch=1.1308°, Roll=1.0169°)       
+Epoch 150/150 | Train MAE: 1.6840° | Val MAE: 1.1417° (Yaw=1.3040°, Pitch=1.1234°, Roll=0.9978°)       
+
+======================================================================
+✅ TRAINING COMPLETE!
+======================================================================
+
+📊 Results:
+   Best Val MAE:     1.0659°
+   Yaw MAE:          1.1973°
+   Pitch MAE:        1.0343°
+   Roll MAE:         0.9659°
+   Final Epoch:      150
+   Model saved to:   models/ablation/backbone/attention_mobilenet_v3_large_best.pth
+   History saved to: models/ablation/backbone/attention_mobilenet_v3_large_history.csv
+   Parameters:       6,503,506
+
+✅ Fusion variant 'attention' training complete!
+   Best validation MAE: 1.0659°
+
+======================================================================
+📊 EVALUATING ATTENTION FUSION ON TEST SET
+======================================================================
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+   Test samples: 3136
+Testing: 100%|█████████████████████████████████████████████████████████| 49/49 [00:11<00:00,  4.32it/s]
+
+📈 Test Results:
+   Yaw MAE:   1.2119°
+   Pitch MAE: 1.0101°
+   Roll MAE:  0.9560°
+   Mean MAE:  1.0593°
+
+   Results saved to: results/csv_reports/backbone_mobilenet_v3_large_test_results.csv
+
+✅ Test evaluation complete!
+   Test MAE: 1.0593°
+
+======================================================================
+[5/5] Training with EfficientNet-B0
+======================================================================
+======================================================================
+🔗 FUSION STRATEGY ABLATION: ATTENTION
+======================================================================
+
+📋 Configuration:
+   Fusion Type: attention
+   Backbone:    efficientnet_b0
+   Face Dim:    1404
+   Pose Dim:    99
+   Epochs:      150
+   Batch size:  64
+   Output dir:  models/ablation/backbone
+   Device:      cuda
+
+🔍 Checking data preprocessing...
+✅ Data preprocessing already complete - skipping
+   Using splits from: data/splits
+
+📂 Loading data splits...
+   Train samples: 11758
+   Val samples:   784
+   Y mean: [  8.20929   -10.902234   -1.4025756]
+   Y std:  [30.444633 24.493015 11.616344]
+
+🏗️  Creating model...
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=EfficientNet_B0_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B0_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+   Fusion Type:  attention
+   Backbone:     efficientnet_b0
+   Parameters:   7,866,782
+   Model size:   30.01 MB
+
+⚙️  Setting up training...
+
+🚀 Starting training...
+======================================================================
+Epoch   1/150 | Train MAE: 10.8257° | Val MAE: 5.8122° (Yaw=8.4529°, Pitch=5.0604°, Roll=3.9232°)      
+Epoch   5/150 | Train MAE: 4.0338° | Val MAE: 2.7689° (Yaw=3.3556°, Pitch=2.6941°, Roll=2.2570°)       
+Epoch  10/150 | Train MAE: 3.2591° | Val MAE: 2.5545° (Yaw=3.5472°, Pitch=2.4087°, Roll=1.7075°)       
+Epoch  15/150 | Train MAE: 2.9254° | Val MAE: 1.8500° (Yaw=2.1033°, Pitch=1.8434°, Roll=1.6033°)       
+Epoch  20/150 | Train MAE: 2.7426° | Val MAE: 1.6576° (Yaw=1.9222°, Pitch=1.6038°, Roll=1.4467°)       
+   ✓ New best model saved (Val MAE: 1.6576°)
+Epoch  25/150 | Train MAE: 2.5901° | Val MAE: 1.5724° (Yaw=2.0119°, Pitch=1.4541°, Roll=1.2512°)       
+Epoch  30/150 | Train MAE: 2.4543° | Val MAE: 1.8383° (Yaw=2.4852°, Pitch=1.6534°, Roll=1.3763°)       
+Epoch  35/150 | Train MAE: 2.3709° | Val MAE: 1.5237° (Yaw=1.7385°, Pitch=1.5916°, Roll=1.2411°)       
+Epoch  40/150 | Train MAE: 2.2510° | Val MAE: 1.4160° (Yaw=1.7391°, Pitch=1.3874°, Roll=1.1214°)       
+Epoch  45/150 | Train MAE: 2.2034° | Val MAE: 1.5128° (Yaw=1.7530°, Pitch=1.5384°, Roll=1.2469°)       
+Epoch  50/150 | Train MAE: 2.1300° | Val MAE: 1.3315° (Yaw=1.4731°, Pitch=1.4776°, Roll=1.0437°)       
+Epoch  55/150 | Train MAE: 2.1043° | Val MAE: 1.4711° (Yaw=1.5273°, Pitch=1.6448°, Roll=1.2412°)       
+Epoch  60/150 | Train MAE: 2.0361° | Val MAE: 1.2544° (Yaw=1.4492°, Pitch=1.2233°, Roll=1.0905°)       
+Epoch  65/150 | Train MAE: 2.0303° | Val MAE: 1.4995° (Yaw=1.9690°, Pitch=1.2987°, Roll=1.2309°)       
+Epoch  70/150 | Train MAE: 1.9381° | Val MAE: 1.2717° (Yaw=1.4929°, Pitch=1.2851°, Roll=1.0371°)       
+Epoch  75/150 | Train MAE: 1.9456° | Val MAE: 1.1949° (Yaw=1.4073°, Pitch=1.1534°, Roll=1.0239°)       
+Epoch  80/150 | Train MAE: 1.8926° | Val MAE: 1.2372° (Yaw=1.4251°, Pitch=1.2865°, Roll=0.9999°)       
+Epoch  85/150 | Train MAE: 1.8891° | Val MAE: 1.1340° (Yaw=1.3169°, Pitch=1.0925°, Roll=0.9928°)       
+Epoch  90/150 | Train MAE: 1.8432° | Val MAE: 1.0896° (Yaw=1.2114°, Pitch=1.1508°, Roll=0.9065°)       
+   ✓ New best model saved (Val MAE: 1.0896°)
+Epoch  95/150 | Train MAE: 1.8509° | Val MAE: 1.1967° (Yaw=1.4629°, Pitch=1.1331°, Roll=0.9940°)       
+Epoch 100/150 | Train MAE: 1.8290° | Val MAE: 1.2248° (Yaw=1.4786°, Pitch=1.1447°, Roll=1.0512°)       
+Epoch 105/150 | Train MAE: 1.7976° | Val MAE: 1.1185° (Yaw=1.3244°, Pitch=1.1172°, Roll=0.9139°)       
+Epoch 110/150 | Train MAE: 1.7911° | Val MAE: 1.0992° (Yaw=1.2450°, Pitch=1.0742°, Roll=0.9783°)       
+Epoch 115/150 | Train MAE: 1.7533° | Val MAE: 1.1267° (Yaw=1.3469°, Pitch=1.0848°, Roll=0.9483°)       
+Epoch 120/150 | Train MAE: 1.7491° | Val MAE: 1.0940° (Yaw=1.2927°, Pitch=1.0342°, Roll=0.9549°)       
+Epoch 125/150 | Train MAE: 1.7282° | Val MAE: 1.1194° (Yaw=1.3927°, Pitch=1.0592°, Roll=0.9065°)       
+Epoch 130/150 | Train MAE: 1.7246° | Val MAE: 1.0788° (Yaw=1.3250°, Pitch=0.9749°, Roll=0.9365°)       
+Epoch 135/150 | Train MAE: 1.7046° | Val MAE: 1.1880° (Yaw=1.4034°, Pitch=1.2293°, Roll=0.9313°)       
+Epoch 140/150 | Train MAE: 1.6853° | Val MAE: 1.1039° (Yaw=1.3802°, Pitch=1.0216°, Roll=0.9098°)       
+                                                                                                       
+Early stopping triggered after 144 epochs (no improvement for 20 epochs)
+
+======================================================================
+✅ TRAINING COMPLETE!
+======================================================================
+
+📊 Results:
+   Best Val MAE:     1.0232°
+   Yaw MAE:          1.2070°
+   Pitch MAE:        0.9637°
+   Roll MAE:         0.8987°
+   Final Epoch:      144
+   Model saved to:   models/ablation/backbone/attention_efficientnet_b0_best.pth
+   History saved to: models/ablation/backbone/attention_efficientnet_b0_history.csv
+   Parameters:       7,866,782
+
+✅ Fusion variant 'attention' training complete!
+   Best validation MAE: 1.0232°
+
+======================================================================
+📊 EVALUATING ATTENTION FUSION ON TEST SET
+======================================================================
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+   Test samples: 3136
+Testing: 100%|█████████████████████████████████████████████████████████| 49/49 [00:11<00:00,  4.24it/s]
+
+📈 Test Results:
+   Yaw MAE:   1.1896°
+   Pitch MAE: 0.9993°
+   Roll MAE:  0.9501°
+   Mean MAE:  1.0463°
+
+   Results saved to: results/csv_reports/backbone_efficientnet_b0_test_results.csv
+
+✅ Test evaluation complete!
+   Test MAE: 1.0463°
+
+======================================================================
+✅ ALL BACKBONE ABLATION EXPERIMENTS COMPLETE!
+======================================================================
+
+Results saved to:
+  results/csv_reports/backbone_resnet34_test_results.csv
+  results/csv_reports/backbone_resnet18_test_results.csv
+  results/csv_reports/backbone_resnet50_test_results.csv
+  results/csv_reports/backbone_mobilenet_v3_large_test_results.csv
+  results/csv_reports/backbone_efficientnet_b0_test_results.csv
+
+Models saved to: models/ablation/backbone/
+(venv) ➜  Archive git:(main) ✗ 
+
+
+
+
+
+
+
+
+(venv) ➜  Archive git:(main) ✗ python train_fusion_ablation.py \
+    --fusion_type attention \
+    --backbone efficientnet_b0 \
+    --face_dim 1404 \
+    --pose_dim 99 \
+    --epochs 150 \
+    --batch_size 64
+======================================================================
+🔗 FUSION STRATEGY ABLATION: ATTENTION
+======================================================================
+
+📋 Configuration:
+   Fusion Type: attention
+   Backbone:    efficientnet_b0
+   Face Dim:    1404
+   Pose Dim:    99
+   Epochs:      150
+   Batch size:  64
+   Output dir:  models/ablation/fusion
+   Device:      cuda
+
+🔍 Checking data preprocessing...
+✅ Data preprocessing already complete - skipping
+   Using splits from: data/splits
+
+📂 Loading data splits...
+   Train samples: 11758
+   Val samples:   784
+   Y mean: [  8.20929   -10.902234   -1.4025756]
+   Y std:  [30.444633 24.493015 11.616344]
+
+🏗️  Creating model...
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:208: UserWarning: The parameter 'pretrained' is deprecated since 0.13 and may be removed in the future, please use 'weights' instead.
+  warnings.warn(
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=EfficientNet_B0_Weights.IMAGENET1K_V1`. You can also use `weights=EfficientNet_B0_Weights.DEFAULT` to get the most up-to-date weights.
+  warnings.warn(msg)
+   Fusion Type:  attention
+   Backbone:     efficientnet_b0
+   Parameters:   7,866,782
+   Model size:   30.01 MB
+
+⚙️  Setting up training...
+
+🚀 Starting training...
+======================================================================
+Epoch   1/150 | Train MAE: 10.8831° | Val MAE: 5.6214° (Yaw=7.3135°, Pitch=5.5640°, Roll=3.9868°)      
+Epoch   5/150 | Train MAE: 3.9514° | Val MAE: 2.5504° (Yaw=3.2091°, Pitch=2.3934°, Roll=2.0487°)       
+Epoch  10/150 | Train MAE: 3.2758° | Val MAE: 2.1740° (Yaw=2.6247°, Pitch=1.9859°, Roll=1.9113°)       
+Epoch  15/150 | Train MAE: 2.9268° | Val MAE: 1.8624° (Yaw=2.4140°, Pitch=1.7077°, Roll=1.4655°)       
+Epoch  20/150 | Train MAE: 2.7393° | Val MAE: 1.7142° (Yaw=2.0930°, Pitch=1.6668°, Roll=1.3828°)       
+Epoch  25/150 | Train MAE: 2.5627° | Val MAE: 1.8367° (Yaw=2.3967°, Pitch=1.7468°, Roll=1.3666°)       
+Epoch  30/150 | Train MAE: 2.4137° | Val MAE: 1.5703° (Yaw=1.9336°, Pitch=1.4714°, Roll=1.3057°)       
+Epoch  35/150 | Train MAE: 2.3229° | Val MAE: 1.4565° (Yaw=1.7636°, Pitch=1.4565°, Roll=1.1494°)       
+Epoch  40/150 | Train MAE: 2.2622° | Val MAE: 1.4371° (Yaw=1.6628°, Pitch=1.5030°, Roll=1.1456°)       
+Epoch  45/150 | Train MAE: 2.1731° | Val MAE: 1.3677° (Yaw=1.6333°, Pitch=1.3904°, Roll=1.0793°)       
+Epoch  50/150 | Train MAE: 2.1534° | Val MAE: 1.2930° (Yaw=1.5407°, Pitch=1.3164°, Roll=1.0218°)       
+   ✓ New best model saved (Val MAE: 1.2930°)
+Epoch  55/150 | Train MAE: 2.0955° | Val MAE: 1.2589° (Yaw=1.5059°, Pitch=1.3157°, Roll=0.9550°)       
+Epoch  60/150 | Train MAE: 2.0418° | Val MAE: 1.3880° (Yaw=1.7289°, Pitch=1.3702°, Roll=1.0649°)       
+Epoch  65/150 | Train MAE: 2.0040° | Val MAE: 1.3368° (Yaw=1.5797°, Pitch=1.3415°, Roll=1.0893°)       
+Epoch  70/150 | Train MAE: 1.9496° | Val MAE: 1.1838° (Yaw=1.3189°, Pitch=1.2396°, Roll=0.9930°)       
+   ✓ New best model saved (Val MAE: 1.1838°)
+Epoch  75/150 | Train MAE: 1.9368° | Val MAE: 1.2823° (Yaw=1.5969°, Pitch=1.2654°, Roll=0.9846°)       
+Epoch  80/150 | Train MAE: 1.9185° | Val MAE: 1.2387° (Yaw=1.3919°, Pitch=1.2787°, Roll=1.0455°)       
+Epoch  85/150 | Train MAE: 1.8667° | Val MAE: 1.2623° (Yaw=1.5718°, Pitch=1.2307°, Roll=0.9846°)       
+Epoch  90/150 | Train MAE: 1.8871° | Val MAE: 1.1380° (Yaw=1.3073°, Pitch=1.1576°, Roll=0.9491°)       
+   ✓ New best model saved (Val MAE: 1.1380°)
+Epoch  95/150 | Train MAE: 1.8303° | Val MAE: 1.2406° (Yaw=1.2742°, Pitch=1.4522°, Roll=0.9952°)       
+Epoch 100/150 | Train MAE: 1.8017° | Val MAE: 1.0830° (Yaw=1.1775°, Pitch=1.1589°, Roll=0.9126°)       
+   ✓ New best model saved (Val MAE: 1.0830°)
+Epoch 105/150 | Train MAE: 1.8013° | Val MAE: 1.2541° (Yaw=1.4995°, Pitch=1.2885°, Roll=0.9742°)       
+Epoch 110/150 | Train MAE: 1.7611° | Val MAE: 1.0891° (Yaw=1.2984°, Pitch=1.0569°, Roll=0.9120°)       
+Epoch 115/150 | Train MAE: 1.7871° | Val MAE: 1.1473° (Yaw=1.3180°, Pitch=1.1991°, Roll=0.9247°)       
+Epoch 120/150 | Train MAE: 1.7349° | Val MAE: 1.0516° (Yaw=1.1945°, Pitch=1.0340°, Roll=0.9263°)       
+   ✓ New best model saved (Val MAE: 1.0516°)
+Epoch 125/150 | Train MAE: 1.7402° | Val MAE: 1.2194° (Yaw=1.5875°, Pitch=1.1084°, Roll=0.9623°)       
+Epoch 130/150 | Train MAE: 1.7286° | Val MAE: 1.0315° (Yaw=1.2270°, Pitch=0.9881°, Roll=0.8794°)       
+   ✓ New best model saved (Val MAE: 1.0315°)
+Epoch 135/150 | Train MAE: 1.7166° | Val MAE: 1.1843° (Yaw=1.4178°, Pitch=1.2172°, Roll=0.9179°)       
+Epoch 140/150 | Train MAE: 1.7013° | Val MAE: 1.2120° (Yaw=1.4521°, Pitch=1.1885°, Roll=0.9953°)       
+Epoch 145/150 | Train MAE: 1.6652° | Val MAE: 1.0634° (Yaw=1.2534°, Pitch=1.0718°, Roll=0.8650°)       
+Epoch 150/150 | Train MAE: 1.6847° | Val MAE: 1.0621° (Yaw=1.3351°, Pitch=0.9841°, Roll=0.8671°)       
+
+Early stopping triggered after 150 epochs (no improvement for 20 epochs)
+
+======================================================================
+✅ TRAINING COMPLETE!
+======================================================================
+
+📊 Results:
+   Best Val MAE:     1.0315°
+   Yaw MAE:          1.2270°
+   Pitch MAE:        0.9881°
+   Roll MAE:         0.8794°
+   Final Epoch:      150
+   Model saved to:   models/ablation/fusion/fusion_attention_efficientnet_b0_best.pth
+   History saved to: models/ablation/fusion/fusion_attention_efficientnet_b0_history.csv
+   Parameters:       7,866,782
+
+✅ Fusion variant 'attention' training complete!
+   Best validation MAE: 1.0315°
+
+======================================================================
+📊 EVALUATING ATTENTION FUSION ON TEST SET
+======================================================================
+/home/genesys/hamza/cervical/Archive/venv/lib/python3.12/site-packages/torchvision/models/_utils.py:223: UserWarning: Arguments other than a weight enum or `None` for 'weights' are deprecated since 0.13 and may be removed in the future. The current behavior is equivalent to passing `weights=None`.
+  warnings.warn(msg)
+   Test samples: 3136
+Testing: 100%|█████████████████████████████████████████████████████████| 49/49 [00:11<00:00,  4.21it/s]
+
+📈 Test Results:
+   Yaw MAE:   1.1464°
+   Pitch MAE: 0.9496°
+   Roll MAE:  0.9547°
+   Mean MAE:  1.0169°
+
+   Results saved to: results/csv_reports/fusion_attention_test_results.csv
+
+✅ Test evaluation complete!
+   Test MAE: 1.0169°

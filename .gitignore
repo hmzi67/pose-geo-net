@@ -70,5 +70,15 @@ ABLATION_STATUS_SUMMARY.md
 .cache/
 data/
 
-sdfasd
 
+
+VALIDATION_REPORT.md
+ACCURACY_MATRIX_COMPLETE.md
+
+command.txt
+
+accuracy_matrix_results.json
+
+accuracy_matrix_fusion_results.json
+
+accuracy_matrix_dimension_results.json
